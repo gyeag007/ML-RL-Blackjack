@@ -1,0 +1,183 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.4 (15/5/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,twocolumn]{article}
+
+\usepackage{blindtext} % Package to generate dummy text throughout this template 
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Reinforcement Learning  $\bullet$ September 2021 }% Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{Machine Learning: Reinforced Learning} % Article title
+\author{%
+\textsc{Robert Horton}\thanks{"Denim"} \\[1ex] % Your name
+\normalsize University of Colorado Springs Colorado \\ % Your institution
+\normalsize \href{mailto:rhorton2@uccs.edu}{rhorton2@uccs.edu} % Your email address
+\and % Uncomment if 2 authors are required, duplicate these 4 lines if more
+\textsc{Gaberial Yeager}\thanks{"Gabe"} \\[1ex] % Second author's name
+\normalsize University of Colorado Springs Colorado \\ % Your institution
+\normalsize \href{mailto:gyeager@uccs.edu}{gyeager@uccs.edu} % Second author's email address
+}
+\date{\today} % Leave empty to omit a date
+\renewcommand{\maketitlehookd}{%
+\begin{abstract}
+ \noindent Words can be extremely powerful in many ways. Whether they are being used to convey feelings, thoughts, suggestions, or even to show gratitude, as human beings that interact with each other it is important to understand the intent behind these words.  This can be especially difficult when the words we use to show different feelings can form double negatives or convey different meaning when used with different conjunctions.  This becomes even more difficult when analyzing feed back from big groups about a particular subject.  This becomes even more difficult when trying to keep track of what it is that the target group is most concerned with.  As business' start to develop more and more Machine Learning capabilities surely among the most important and powerful features is text sentimental analysis on customer feedback.  Through annalists of feed back from customers the company has the potential to create and ensure a more thriving and respected business.  This paper will describe in detail the basics of how sentimental text analysis works, several approaches for solving said problem, analyze which method works best and yields the best results, and then implement this method. 
+
+\end{abstract}
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+\lettrine[nindent=0em,lines=3]{I}n today's age we live in a ever growing sea of data that is just as wild and as untamed as the sea.  Just like navigating the sea one must have the proper tools and experience to combat what ever mother nature has to throw at them.  When collecting data from the web there already exists countless  data sets of tamed and somewhat manageable/cleaned data that one can download from online to perform different tasks.  Whether those tasks are to look over a player stats from previous years for your fantasy league or to train a visual interface to recognize \& learn how to classify certain images, the internet is teaming with data \& the possibilities of what can be done with it.  Of course with great power, comes great responsibility, So one must be very careful with trusting data pulled right off the internet. \\ 
+\indent This data we use from the internet can generally be from some kind of automated data mining or from sets provided from by other institutions , establishments, or companies.  Since data can be collected on almost anything, the scope of what the data is \& what its being used for can widely vary from the baseball players RBI stats in previous years or a set of chest x-rays to train a Machine Learning model\footnote{A programmer designed representation of what is to be learned \& at what rate.} to recolonize x-rays that show signs of pneumonia.\\
+\indent For companies who strongly believe in being adaptive to their target market \& believe in listening to the customers, out of all the data on the internet the highest potential rests in the feedback \& thoughts of their target market. As well as anybody else who might have thoughts about the company for that mater.  This can be even more useful when companies might have a wide variety of features that they are curious to analyze. But first, what is text sentiment analysis and exactly how does it work? 
+
+%------------------------------------------------
+
+\section{Background}
+
+Sentimental text analysis in one form of another has been around for a very long time.  It gained its popularity when business began to take interest in what the customer might have to say about the product(s) being sold to them.  By doing so the business could slowly gather data by asking customers what they liked.  Even to this day it is not uncommon for business to hold sessions of relatively small groups comprised of volunteers that represent their target customers and then ask them questions about the product after using them.  After getting enough feed back the business' could decide on what changes to make with their business or product(s) to ensure future business with these people and hopefully gain more in the process.  Over the last few centuries computer hardware capabilities and the growing embedded use of internet in every day live has made it possible for large data sets to be acquired and analyzed in ways that were never possible before.  Through larger data sets that can be parsed quicker the business can react and make changes quicker to what the customer(s) wants or needs.  \\
+\indent This can become extremely daunting when one considers how many different products and features specific to each product that a business might have and want to analyze.  It becomes even more daunting when you consider the size of some the data sets contained out there and can quickly see why no one person would want to go through a whole set of these data sets and report back things like which product did the customer(s) mention most in their reviews or feedback?  What features, about the bad products, did they not like?  How much did they not like it?  The imagination could go through all kinds of questions that such data sets like these can collect.  That's why, when creating a model, its important to establish and commit to a specific aspect of data to collect.  Through the use of ratings like one to five stars, one being the customer not enjoying the product and having a low level of satisfaction, \& five being the customer enjoyed the product with the most satisfaction.  Through these rating we can make it easier to understand how much the customer enjoyed the product(s) or business.  Along with the rating and comment that customer make in their review we can train a computer programmed model to learn which words are associated with good reviews and how certain conjunction and double negatives can give words a different meaning.  Through these methods the business can develop more a accurate and helpful details on what aspects of the product(s) or business to change or not change.\\
+\indent Training a model to learn these words that coresspond with certain attributes     
+\begin{itemize}
+\item Natural Language Processing (NLP)
+\item Curabitur feugiat
+\item turpis sed auctor facilisis
+\item arcu eros accumsan lorem, at posuere mi diam sit amet tortor
+\item Fusce fermentum, mi sit amet euismod rutrum
+\item sem lorem molestie diam, iaculis aliquet sapien tortor non nisi
+\item Pellentesque bibendum pretium aliquet
+\end{itemize}
+\blindtext % Dummy text
+
+Text requiring further explanation\footnote{Example footnote}.
+
+%------------------------------------------------
+
+\section{Results}
+
+\begin{table}
+\caption{Example table}
+\centering
+\begin{tabular}{llr}
+\toprule
+\multicolumn{2}{c}{Name} \\
+\cmidrule(r){1-2}
+First name & Last Name & Grade \\
+\midrule
+John & Doe & $7.5$ \\
+Richard & Miles & $2$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\blindtext % Dummy text
+
+\begin{equation}
+\label{eq:emc}
+e = mc^2
+\end{equation}
+
+\blindtext % Dummy text
+
+%------------------------------------------------
+
+\section{Discussion}
+
+\subsection{Subsection One}
+
+A statement requiring citation \cite{Figueredo:2009dg}.
+\blindtext % Dummy text
+
+\subsection{Subsection Two}
+
+\blindtext % Dummy text
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
+Figueredo, A.~J. and Wolf, P. S.~A. (2009).
+\newblock Assortative pairing and life history strategy - a cross-cultural
+  study.
+\newblock {\em Human Nature}, 20:317--330.
+ 
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
