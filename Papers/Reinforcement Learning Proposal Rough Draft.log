@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.9.16)  17 SEP 2021 20:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.9.16)  22 SEP 2021 20:32
 entering extended mode
 **"./Reinforcement Learning Proposal Rough Draft.tex"
 ("Reinforcement Learning Proposal Rough Draft.tex"
@@ -532,21 +532,18 @@ Package lettrine.sty Info: Targeted height = 30.07506pt
 [1{C:/Users/Admin/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-]
-Underfull \vbox (badness 1728) has occurred while \output is active []
-
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 159--161
+] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
 \T1/pplx/m/n/10 (+20) A state-ment re-quir-ing ci-ta-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--161
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
 \T1/pplx/m/n/10 (+20) [[]]. Lorem ip-
  []
 
 [3]
-Underfull \hbox (badness 1748) in paragraph at lines 173--177
+Underfull \hbox (badness 1748) in paragraph at lines 174--178
 []\T1/pplx/m/n/10 (+20) Figueredo, A. J.
  []
 
@@ -554,20 +551,24 @@ Underfull \hbox (badness 1748) in paragraph at lines 173--177
 
 ] ("Reinforcement Learning Proposal Rough Draft.aux")
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+Package rerunfilecheck Warning: File `"Reinforcement Learning Proposal Rough Dr
+aft".out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: File `"Reinforcement Learning Proposal Rough Draft
-".out' has not changed.
-(rerunfilecheck)             Checksum: 8BCFB960CFEA6B563E0C29C187A2F8B8;305.
+Package rerunfilecheck Info: Checksums for `"Reinforcement Learning Proposal Ro
+ugh Draft".out':
+(rerunfilecheck)             Before: DD330C2F8C02AB6D4AB5B9FCBD8CED44;311
+(rerunfilecheck)             After:  8BCFB960CFEA6B563E0C29C187A2F8B8;305.
  ) 
 Here is how much of TeX's memory you used:
  10665 strings out of 481532
- 172452 string characters out of 2915361
+ 172524 string characters out of 2915361
  519302 words of memory out of 3000000
  27029 multiletter control sequences out of 15000+200000
  479791 words of font info for 337 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,13n,74p,1577b,388s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,14n,74p,1574b,388s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:
 /Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10
 .pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
@@ -577,7 +578,7 @@ alatino/uplb8a.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/ur
 w/palatino/uplr8a.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1
 /urw/palatino/uplri8a.pfb>
 Output written on "Reinforcement Learning Proposal Rough Draft.pdf" (4 pages, 1
-06140 bytes).
+06267 bytes).
 PDF statistics:
  86 PDF objects out of 1000 (max. 8388607)
  16 named destinations out of 1000 (max. 500000)
