@@ -105,7 +105,8 @@
 
 \section{Introduction}
 
-\lettrine[nindent=0em,lines=3]{B}lackjack is a commonly known game that can be played with different types of methods of approach.
+ 
+\lettrine[nindent=0em,lines=3]{I}f you walk into any casino, you are likely to see one of the most popular card games in the world. Blackjack was invented in France about 300 years ago where it was known as “Vingt et Un” which means “twenty-one”. The objective is to get the sum of the value of your cards as close to 21 without going over 21. Going over 21 is know as a “break” which is a loss that gives the dealer a win. Its popularity is largely to the fact that is simple to learn. When playing blackjack there is a dealer and at least 1 player. Every card has a point value. Cards 2 through 10 are worth the corresponding number printed on them regardless of the color or suit. For example, 7 of hearts is simply worth 7 points. Face cards (jack, queen, king) are worth 10 points, and ace cards can be worth either 1 or 11 points, depending on whether or not the player “breaks” and goes over 21. A player is dealt two cards and may “hit” and receive another card or “stay” and refuse another card. There are a few cases that exist in casino blackjack that may be considered. In standard blackjack a player can split their hand up to 3 times, meaning the player can play up to 4 hands.  An ace and a card valued at 10 points beats all other cards, even if the sum of the other cards is 21. The player places a wager at the beginning of the hand and may change their bet after two cards are dealt. The dealer has a advantage over the players because of the hole card that players must guess to play against. This advantage of the dealer becomes 0.5\% if the player follows the basic blackjack strategy (Wong 1994). We will train an agent that will play blackjack according to policies it has learned during training. The agent will be trained with several different reinforced learning algorithms including Q-learning, Sarsa, and Temporal Difference will be compared to the optimal strategy and random plays (no strategy).
 
 %------------------------------------------------
 
@@ -115,7 +116,10 @@ Reinforcement learning, although considered a part of machine learning, is very 
 
 \indent When considering which method of RL\footnote{Reinforcement Learning} to use when wanting to teach a machine how to play the game blackjack, there are many different options to consider.  When considering the game blackjack the next cards that will be drawn are always unknown to the players and dealers.  The hole card\footnote{Face down card that is dealt to dealer at the beginning of each game} is also a card that is not known to any player including the dealer, making this game an even more inherently stochastic model.  Since bets are placed while playing this game, maximizing the profit on return for each game played is very important and is hard to do with the uncertainty of what the next card dealt will be and what hole card has been dealt to the dealer.  This models the perfect Markov Decision Process where each game promises states and actions that are unknown and have not been explored yet.\\
 
-\indent When considering reinforcement learning it can be broken down further into two categories “On Policy” or “Off Policy” learning.  On policy RL approaches are considered as methods that involve learning agents that learn from the value function denoted as $v_{\pi}$ or $q_{\pi}$ according to the current occupied state which can also be denoted as $v_{\pi}(s)$  or $q_{\pi}(s)$ for $s \in S$ where $S$ is the set of all possible states.   Off policy works when the learning agents learn from the value function of the previous occupied state \cite{GeeksforGeeks:2021dg}.  Above is a table that will be referred to when discussing what methods will be used for approaching these problems. \\ 
+\indent When considering reinforcement learning it can be broken down further into two categories “On-Policy” or “Off-Policy” learning.  On-Policy RL approaches are considered as methods that involve learning agents that learn from the value function denoted as $v_{\pi}$ or $q_{\pi}$ according to future possible states and future accumaltive rewards from moving through these possible states.  These value functions for a given state at each step in time can be denoted as $v_{\pi}(s)$  or $q_{\pi}(s)$ for $s \in S$ where $S$ is the set of all possible states.   
+\indent Off policy works when the learning agents learn by periodical taking actions that are not following the policy and rewards are not known to the agent.
+
+of the previous occupied state \cite{GeeksforGeeks:2021dg}.  Above is a table that will be referred to when discussing what methods will be used for approaching these problems. \\ 
 
 \begin{table}
 \caption{Example table}
@@ -126,9 +130,8 @@ Reinforcement learning, although considered a part of machine learning, is very 
 \cmidrule(r){1-2}
 Name & On/Off-Policy  & Greedy \\
 \midrule
-Q Learning & Off-Policy & True \\
-SARSA & On-Policy & True \\
-T{\tiny emperoal} D{\tiny iffernece} & Off-Policy & False \\
+Q Learning & Off-Policy & ?? \\
+SARSA & On-Policy & ?? \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -145,19 +148,13 @@ T{\tiny emperoal} D{\tiny iffernece} & Off-Policy & False \\
 \end{align*}
 
 [1]\\
-, where the steps taken are independent of what the next updated policy might be based upon that action.  Depending upon the value of $\epsilon$ the frequency of random steps taken can vary and make the model even more stochastic.  What is important to note is that although it might be able to ensure a steady increase in profit after each game faster a not so greedy approach could in the long run ensure more consistent and bigger profits over a longer period of multiple games. With each action taken the next one could be random. The two actions are independent in the sense that the previous step was not taken based on the reward given from the action performed to move into now occupied state. 
+, where the steps taken are independent of what the next updated policy might be based upon that action.  Depending upon the value of $\epsilon$ the frequency of random steps taken can vary and vary in how stochastic the model is.  What is important to note is that even though these models are stochastic the models are able quickly able to ensure a steady and step increase in profit after each game is played. Since this methods relies on deciding what actions to take based off of recent actions, the decision is completely independent of future rewards that might be gained by moving into the decided state, other then the current policy being used. 
 
 %------------------------------------------------
 
 \subsection{SARSA}
 
-\indent The “SARSA” \footnote{State Action Reward State Action} is a slightly modified version of the Q -learning approach where the modification of the policy differs. Q-learning is considered an off policy where SARSA is an on policy \cite{GeeksforGeeks:2021dg}. 
-
-%------------------------------------------------
-
-\subsection{Temporal Difference}
-
-The third and last method that will be considered for application in this problem is “Temporal Difference“ suggested by Dr. Andrew G. Barto \cite{sutton:2018}.  Temporal difference involves adjusting the policy based on a estimation of the sum of future actions to be made.  This method, unlike the rest, takes a greedy approach that will form decisions on what actions to take next based off of the newly calculated policy from known possible actions in states.  All of these are important and vary in the approaches for adjusting and reacting to the policy that helps are self-learning machines decide what moves to make next and at what rate they learn new things and ultimately uncover the best policy to solving a problem. 
+\indent The “SARSA” \footnote{State Action Reward State Action} is a slightly modified version of the Q -learning approach where the modification of the policy differs. Q-learning is considered an off policy where SARSA is an on policy \cite{GeeksforGeeks:2021dg}.  The difference between the two, as iterated before, is that the action that is chosen to be taken is based off the accumulative reward off all future states that could possibly betaken.  This approach does take a slightly more greedy approach but still involves exploration based off a given learning rate specified with in the model parameters. 
 
 %------------------------------------------------
 
