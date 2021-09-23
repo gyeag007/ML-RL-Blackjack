@@ -28,6 +28,8 @@
 \linespread{1.05} % Line spacing - Palatino needs more space between lines
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 
+\usepackage{amsmath}
+
 \usepackage[english]{babel} % Language hyphenation and typographical rules
 
 \usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
@@ -35,6 +37,8 @@
 \usepackage{booktabs} % Horizontal rules in tables
 
 \usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{xcolor}
 
 \usepackage{enumitem} % Customized lists
 \setlist[itemize]{noitemsep} % Make itemize lists more compact
@@ -81,11 +85,13 @@
 \date{\today} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
- \noindent Words can be extremely powerful in many ways. Whether they are being used to convey feelings, thoughts, suggestions, or even to show gratitude, as human beings that interact with each other it is important to understand the intent behind these words.  This can be especially difficult when the words we use to show different feelings can form double negatives or convey different meaning when used with different conjunctions.  This becomes even more difficult when analyzing feed back from big groups about a particular subject.  This becomes even more difficult when trying to keep track of what it is that the target group is most concerned with.  As business' start to develop more and more Machine Learning capabilities surely among the most important and powerful features is text sentimental analysis on customer feedback.  Through annalists of feed back from customers the company has the potential to create and ensure a more thriving and respected business.  This paper will describe in detail the basics of how sentimental text analysis works, several approaches for solving said problem, analyze which method works best and yields the best results, and then implement this method. 
+ \noindent ABSTRACT HERE!!!!!
 
 \end{abstract}
 }
 
+\renewcommand \thesection{\arabic{section}}
+\renewcommand \thesubsection{\arabic{section}.\arabic{subsection}}
 %----------------------------------------------------------------------------------------
 
 \begin{document}
@@ -99,83 +105,98 @@
 
 \section{Introduction}
 
-\lettrine[nindent=0em,lines=3]{I}n today's age we live in a ever growing sea of data that is just as wild and as untamed as the sea.  Just like navigating the sea one must have the proper tools and experience to combat what ever mother nature has to throw at them.  When collecting data from the web there already exists countless  data sets of tamed and somewhat manageable/cleaned data that one can download from online to perform different tasks.  Whether those tasks are to look over a player stats from previous years for your fantasy league or to train a visual interface to recognize \& learn how to classify certain images, the internet is teaming with data \& the possibilities of what can be done with it.  Of course with great power, comes great responsibility, So one must be very careful with trusting data pulled right off the internet. \\ 
-\indent This data we use from the internet can generally be from some kind of automated data mining or from sets provided from by other institutions , establishments, or companies.  Since data can be collected on almost anything, the scope of what the data is \& what its being used for can widely vary from the baseball players RBI stats in previous years or a set of chest x-rays to train a Machine Learning model\footnote{A programmer designed representation of what is to be learned \& at what rate.} to recolonize x-rays that show signs of pneumonia.\\
-\indent For companies who strongly believe in being adaptive to their target market \& believe in listening to the customers, out of all the data on the internet the highest potential rests in the feedback \& thoughts of their target market. As well as anybody else who might have thoughts about the company for that mater.  This can be even more useful when companies might have a wide variety of features that they are curious to analyze. But first, what is text sentiment analysis and exactly how does it work? 
+\lettrine[nindent=0em,lines=3]{B}lackjack is a commonly known game that can be played with different types of methods of approach.
 
 %------------------------------------------------
 
 \section{Background}
 
-Sentimental text analysis in one form of another has been around for a very long time.  It gained its popularity when business began to take interest in what the customer might have to say about the product(s) being sold to them.  By doing so the business could slowly gather data by asking customers what they liked.  Even to this day it is not uncommon for business to hold sessions of relatively small groups comprised of volunteers that represent their target customers and then ask them questions about the product after using them.  After getting enough feed back the business' could decide on what changes to make with their business or product(s) to ensure future business with these people and hopefully gain more in the process.  Over the last few centuries computer hardware capabilities and the growing embedded use of internet in every day live has made it possible for large data sets to be acquired and analyzed in ways that were never possible before.  Through larger data sets that can be parsed quicker the business can react and make changes quicker to what the customer(s) wants or needs.  \\
-\indent This can become extremely daunting when one considers how many different products and features specific to each product that a business might have and want to analyze.  It becomes even more daunting when you consider the size of some the data sets contained out there and can quickly see why no one person would want to go through a whole set of these data sets and report back things like which product did the customer(s) mention most in their reviews or feedback?  What features, about the bad products, did they not like?  How much did they not like it?  The imagination could go through all kinds of questions that such data sets like these can collect.  That's why, when creating a model, its important to establish and commit to a specific aspect of data to collect.  Through the use of ratings like one to five stars, one being the customer not enjoying the product and having a low level of satisfaction, \& five being the customer enjoyed the product with the most satisfaction.  Through these rating we can make it easier to understand how much the customer enjoyed the product(s) or business.  Along with the rating and comment that customer make in their review we can train a computer programmed model to learn which words are associated with good reviews and how certain conjunction and double negatives can give words a different meaning.  Through these methods the business can develop more a accurate and helpful details on what aspects of the product(s) or business to change or not change.\\
-\indent Training a model to learn these words that coresspond with certain attributes     
-\begin{itemize}
-\item Natural Language Processing (NLP)
-\item Curabitur feugiat
-\item turpis sed auctor facilisis
-\item arcu eros accumsan lorem, at posuere mi diam sit amet tortor
-\item Fusce fermentum, mi sit amet euismod rutrum
-\item sem lorem molestie diam, iaculis aliquet sapien tortor non nisi
-\item Pellentesque bibendum pretium aliquet
-\end{itemize}
-\blindtext % Dummy text
+Reinforcement learning, although considered a part of machine learning, is very different from the other types of machine learning.  Two main categories that the different types of machine learning fall under are supervised learning\footnote{Explanation of supervised learning} and unsupervised learning \footnote{Explanation of unsupervised learning} \cite{sutton:2018}.  Although supervised learning can be used to speed along the process of machine learning this is not always an option when deploying a machine learning process into an unexplored environment.  These types of implementations call upon reinforcement learning to perform an unsupervised learning process.  Now when performing these unsupervised approaches of machine learning there are many different methods that have been used and studied over the years.  Finding out which method is the most efficient and works best for training a machine to learn how to play blackjack will be the topic of this paper.\\ 
 
-Text requiring further explanation\footnote{Example footnote}.
+\indent When considering which method of RL\footnote{Reinforcement Learning} to use when wanting to teach a machine how to play the game blackjack, there are many different options to consider.  When considering the game blackjack the next cards that will be drawn are always unknown to the players and dealers.  The hole card\footnote{Face down card that is dealt to dealer at the beginning of each game} is also a card that is not known to any player including the dealer, making this game an even more inherently stochastic model.  Since bets are placed while playing this game, maximizing the profit on return for each game played is very important and is hard to do with the uncertainty of what the next card dealt will be and what hole card has been dealt to the dealer.  This models the perfect Markov Decision Process where each game promises states and actions that are unknown and have not been explored yet.\\
 
-%------------------------------------------------
-
-\section{Results}
+\indent When considering reinforcement learning it can be broken down further into two categories “On Policy” or “Off Policy” learning.  On policy RL approaches are considered as methods that involve learning agents that learn from the value function denoted as $v_{\pi}$ or $q_{\pi}$ according to the current occupied state which can also be denoted as $v_{\pi}(s)$  or $q_{\pi}(s)$ for $s \in S$ where $S$ is the set of all possible states.   Off policy works when the learning agents learn from the value function of the previous occupied state \cite{GeeksforGeeks:2021dg}.  Above is a table that will be referred to when discussing what methods will be used for approaching these problems. \\ 
 
 \begin{table}
 \caption{Example table}
 \centering
 \begin{tabular}{llr}
 \toprule
-\multicolumn{2}{c}{Name} \\
+\multicolumn{2}{c}{Blackjack RL Methods} \\
 \cmidrule(r){1-2}
-First name & Last Name & Grade \\
+Name & On/Off-Policy  & Greedy \\
 \midrule
-John & Doe & $7.5$ \\
-Richard & Miles & $2$ \\
+Q Learning & Off-Policy & True \\
+SARSA & On-Policy & True \\
+T{\tiny emperoal} D{\tiny iffernece} & Off-Policy & False \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\blindtext % Dummy text
+%------------------------------------------------
 
-\begin{equation}
-\label{eq:emc}
-e = mc^2
-\end{equation}
+\subsection{Q-Learning}
 
-\blindtext % Dummy text
+\indent One of the most well known and oldest methods listed is the “Q-Learning” approach.  This approach is considered an off-policy TD control algorithm that can be defined as\\
+
+\begin{align*}
+ Q(S_t,A_t) \leftarrow & Q(S_t,A_t)+ \alpha\big[ R_{t+1} +\\
+& \gamma \binom{max}{a} Q(S_{t+1}, a) - Q(S_t,A_t)\big]
+\end{align*}
+
+[1]\\
+, where the steps taken are independent of what the next updated policy might be based upon that action.  Depending upon the value of $\epsilon$ the frequency of random steps taken can vary and make the model even more stochastic.  What is important to note is that although it might be able to ensure a steady increase in profit after each game faster a not so greedy approach could in the long run ensure more consistent and bigger profits over a longer period of multiple games. With each action taken the next one could be random. The two actions are independent in the sense that the previous step was not taken based on the reward given from the action performed to move into now occupied state. 
 
 %------------------------------------------------
 
-\section{Discussion}
+\subsection{SARSA}
 
-\subsection{Subsection One}
+\indent The “SARSA” \footnote{State Action Reward State Action} is a slightly modified version of the Q -learning approach where the modification of the policy differs. Q-learning is considered an off policy where SARSA is an on policy \cite{GeeksforGeeks:2021dg}. 
+
+%------------------------------------------------
+
+\subsection{Temporal Difference}
+
+The third and last method that will be considered for application in this problem is “Temporal Difference“ suggested by Dr. Andrew G. Barto \cite{sutton:2018}.  Temporal difference involves adjusting the policy based on a estimation of the sum of future actions to be made.  This method, unlike the rest, takes a greedy approach that will form decisions on what actions to take next based off of the newly calculated policy from known possible actions in states.  All of these are important and vary in the approaches for adjusting and reacting to the policy that helps are self-learning machines decide what moves to make next and at what rate they learn new things and ultimately uncover the best policy to solving a problem. 
+
+%------------------------------------------------
+
+\section{Related Work}
+
+%------------------------------------------------
+
+\section{Methodology}
 
 A statement requiring citation \cite{Figueredo:2009dg}.
-\blindtext % Dummy text
 
-\subsection{Subsection Two}
+%------------------------------------------------
 
-\blindtext % Dummy text
+\section{Conclusion}
 
+\pagebreak
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
 
+\bibliography{Reinforcement Learning Proposal Rough Draft.bib}
+
 \begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+\bibitem[Sutton, R. S., \& Barto, A. G. , 2018]{sutton:2018}
+Sutton, R. S., \& Barto, A. G. (2018).
+\newblock Reinforcement Learning: An Introduction. Cambridge (Mass.): 
+\newblock {\em The MIT Press.}, .
+
+\bibitem[GeeksforGeeks]{GeeksforGeeks:2021dg}
+“Sarsa Reinforcement Learning.” {\em GeeksforGeeks}, \\
+24 June 2021,\\
+\newblock www.geeksforgeeks.org/sarsa-reinforcement-learning/. 
+
 
 \bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
 Figueredo, A.~J. and Wolf, P. S.~A. (2009).
 \newblock Assortative pairing and life history strategy - a cross-cultural
   study.
 \newblock {\em Human Nature}, 20:317--330.
- 
 \end{thebibliography}
 
 %----------------------------------------------------------------------------------------
